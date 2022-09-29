@@ -1,15 +1,17 @@
-# UNIT PLAN NAME
-by TEAM MEMBERS
+# An Introduction to Java GUIs
+by Jenna Lin, Jihae Park
 
 -----
 
 ### General Overview
-(include here description of unit, what class(es) it fits into, when...)
+Course: AP Computer Science A
+
+In this post AP Exam unit, students will learn how to use the graphics classes provided in JDK for constructing their own GUI applications. GUIs are one of the most important parts of any web application. Unlike a text-based interface where users have to type commands into a command line box to tell the computer what to do, a GUI makes it easier for them to input commands by creating visual cues that are more relatable and standardized across all devices.
 
 ---
 
 ### Motivation for Unit
-(why have you decided to make this?)
+I would like to plan something fun and engaging after the AP Exam. I spoke to another AP CSA teacher, and she recommended GUI programming. I think it would be a nice challenge for the students because it requires mastery of basic Java programming. One of my friends, who’s teaching AP CSA at Smithtown High School, said her former students were very eager to learn it because it allowed them to build real programs, programs that they can show their family and friends.
 
 ---
 
