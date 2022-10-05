@@ -6,7 +6,7 @@ by Jenna Lin, Jihae Park, Joel Bianchi
 ### General Overview
 Course: AP Computer Science A
 
-In this post AP Exam unit, students will learn how to use a Java game framework provided in JDK for constructing their own GUI applications. GUIs are one of the most important parts of any web application. Unlike a text-based interface where users have to type commands into a command line box to tell the computer what to do, a GUI makes it easier for them to input commands by creating visual cues that are more relatable and standardized across all devices.
+In this post AP Exam unit, students will learn how to use a Java game framework provided by the Litiengine SDK for constructing their own GUI applications. GUIs are one of the most important parts of any web application. Unlike a text-based interface where users have to type commands into a command line box to tell the computer what to do, a GUI makes it easier for them to input commands by creating visual cues that are more relatable and standardized across all devices.
 
 ---
 
