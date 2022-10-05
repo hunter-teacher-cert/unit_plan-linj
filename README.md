@@ -1,5 +1,5 @@
 # An Introduction to Java GUIs
-by Jenna Lin, Jihae Park
+by Jenna Lin, Jihae Park, Joel Bianchi
 
 -----
 
