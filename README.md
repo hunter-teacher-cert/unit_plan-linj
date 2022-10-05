@@ -11,7 +11,7 @@ In this post AP Exam unit, students will learn how to use the graphics classes p
 ---
 
 ### Motivation for Unit
-I would like to plan something fun and engaging after the AP Exam. I spoke to another AP CSA teacher, and she recommended GUI programming. I think it would be a nice challenge for the students because it requires mastery of basic Java programming. One of my friends, who’s teaching AP CSA at Smithtown High School, said her former students were very eager to learn it because it allowed them to build real programs, programs that they can show their family and friends.
+We would like to plan something fun and engaging after the AP Exam. I spoke to another AP CSA teacher, and she recommended GUI programming. I think it would be a nice challenge for the students because it requires mastery of basic Java programming. One of my friends, who’s teaching AP CSA at Smithtown High School, said her former students were very eager to learn it because it allowed them to build real programs, programs that they can show their family and friends.
 
 ---
 
