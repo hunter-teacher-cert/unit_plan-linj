@@ -16,7 +16,12 @@ We would like to plan something fun and engaging after the AP Exam. It would be 
 ---
 
 ### Standards Referenced
-List The NY State Computer Science standards you will be covering in this unit. Provide the number and name (e.g. 4-6.CT.1 Computational Thinking, Modeling and Simulation)
+9-12.CT.4 (Abstraction and Decomposition)
+Implement a program using a combination of student-defined and third-party functions to organize the
+computation
+9-12.CT.8 (Algorithms and Programming)
+Develop a program that effectively uses control structures in order to create a computer program for
+practical intent, personal expression, or to address a societal issue.
 
 ---
 
