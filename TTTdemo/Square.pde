@@ -2,14 +2,16 @@ public class Square{
   
   private PImage pi;
   private String mark;
+  final private static String noMark = " ";
+  final private static String xMark = "X";
+  final private static String oMark = "O";
   
   public Square(){
-    this(" ");
+    this(noMark);
   }
 
   public Square(String mark){
     this.mark = mark;
- 
 
   }
   
@@ -19,19 +21,26 @@ public class Square{
   }
   
   //mutator
-  public void setMark(String mark){
-    this.mark = mark;
+  public boolean setMark(String mark){
+    if(this.mark.equals(noMark)){
+      this.mark = mark;
+      System.out.println("Successfully changed mark");
+      return true;
+    } else {
+      System.out.println("That square is already taken!");
+      return false;
+    }
   }
   
   public void setX(){
-    if(mark.equals(" ")){
-      mark = "X";
+    if(mark.equals(noMark)){
+      mark = xMark;
     } else {
       System.out.println("Already taken!");
     }
   }
   public void setO(){
-    mark = "O";
+    mark = oMark;
   }
   
   public String toString(){

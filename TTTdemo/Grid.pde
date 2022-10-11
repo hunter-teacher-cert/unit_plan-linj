@@ -18,16 +18,21 @@ public class Grid{
     }
   }
   
-  public void setMark(String mark, GridLocation loc){
+  public boolean setMark(String mark, GridLocation loc){
    
+    boolean isGoodClick;
+
     int row = loc.getR();
     int col = loc.getC();
     
-    board[row][col].setMark(mark);
+    isGoodClick = board[row][col].setMark(mark);
     printGrid();
+
+    return isGoodClick;
     
   } 
   
+
   public void printGrid(){
    
     for(int r = 0; r<size; r++){
@@ -42,12 +47,12 @@ public class Grid{
    
     //map the mouse coordinates to the grid GridLocation
     int sizeOfOneSquare = pixelHeight/this.size;
-    System.out.println(displayHeight + " " + pixelHeight + " " + sizeOfOneSquare);
+    //System.out.println(displayHeight + " " + pixelHeight + " " + sizeOfOneSquare);
     
-    int gridX = mouseX/sizeOfOneSquare;
-    int gridY = mouseY/sizeOfOneSquare;
-    
-    return new GridLocation(gridY, gridX);
+    int row = mouseY/sizeOfOneSquare;
+    int col = mouseX/sizeOfOneSquare;
+
+    return new GridLocation(row, col);
   } 
 
   public int getX(GridLocation loc){
@@ -70,19 +75,6 @@ public class Grid{
     return pixelY;
   } 
   
-  /*
-  //goal: display an X for the clicked GridLocation
-  public void updateMark(GridLocation loc){
-    
-    int pixelX = grid.getX(loc);
-    int pixelY = grid.getY(loc);
-    
-    Square s = board[loc.getR()][loc.getC()];
-    
-    image(s.getImage(),pixelX, pixelY);
-    
-  }
-  */
   
   public int getSize(){
     return size;
@@ -91,9 +83,12 @@ public class Grid{
   public Square getSquare(GridLocation loc){
     return board[loc.getR()][loc.getC()];
   }
+  public Square getSquare(int r, int c){
+    return board[r][c];
+  }
   
   public boolean isGameOver(){
-    return true;
+    return false;
   }
   
 }
