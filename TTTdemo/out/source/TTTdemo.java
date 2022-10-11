@@ -17,23 +17,19 @@ public class TTTdemo extends PApplet {
 
 //GAME VARIABLES
 Grid grid = new Grid(3);
-
 PImage bg;
 PImage x_letter;
 PImage o_letter;
-
 String titleText = "Triple J TicTacToe";
 String turnText = "Who goes first?";
 String winner = "";
-
 boolean isXTurn = true;
-boolean isGameOver = false;
 
 int numHorses = 5;
 Sprite[] horses = new Sprite[numHorses];
 
 
-
+//Required Processing method that gets run once
  public void setup() {
   /* size commented out by preprocessor */;  //match screen size to bg image size
   surface.setTitle("Triple J Game");
@@ -52,55 +48,25 @@ Sprite[] horses = new Sprite[numHorses];
 
   print("TripleJ TicTacToe Game started...");
 
-  //fullScreen();
+  //fullScreen();   //only use if not using a specfic bg image
 }
 
-
+//Required Processing method that automatically loops
+//(Anything drawn on the screen should be called from here)
  public void draw() {
 
-  //set the title each loop
-  surface.setTitle(titleText + "          " + turnText);
+  updateTitleBar();
   
-  //update the background
-  background(bg);
+  updateScreen();
 
-  //update the screen based on the grid
-  for(int r = 0; r<grid.getSize(); r++){
-    for(int c= 0; c<grid.getSize(); c++){
-      GridLocation loc = new GridLocation(r,c);
-      
-      //Paint X's and O's in the approprate grid locations
-      if(grid.getSquare(loc).getMark().equals("X") ){
-        image(x_letter,grid.getX(loc) - x_letter.width/2,grid.getY(loc) - x_letter.height/2);  
-      } else if (grid.getSquare(loc).getMark().equals("O")){
-        image(o_letter,grid.getX(loc) - o_letter.width/2,grid.getY(loc) - o_letter.height/2);
-      }
-      
-    }
-  }
-
-  //determine how to prompt the next move
-  if(isXTurn){
-    turnText = "Click for X";
-  } else {
-    turnText = "Click for O";
-  }
-
-  //check if the game is over
-  if(isThreeInARow()){
+  if(isGameOver()){
     endGame();
-
-    //Show an animation of 5 running horses
-    //System.out.println("horses: " + horses.length);
-    for(Sprite horse: horses){
-      horse.show();
-      horse.animate();
-    }
   }
-
+  
 }
 
-//Method that automatically will run when a mouse click triggers it
+
+//Known Processing method that automatically will run when a mouse click triggers it
  public void mouseClicked(){
   
   //check if click was successful
@@ -118,6 +84,50 @@ Sprite[] horses = new Sprite[numHorses];
   //alternate the turn if a good click
   if(goodClick){
     isXTurn = !isXTurn;
+  }
+}
+
+
+
+
+//------------------ CUSTOM  METHODS --------------------//
+
+//method to update the Title Bar of the Game
+public void updateTitleBar(){
+
+  if(!isGameOver()) {
+    //set the title each loop
+    surface.setTitle(titleText + "          " + turnText);
+
+    //determine how to prompt the next move
+    if(isXTurn){
+      turnText = "Click for X";
+    } else {
+      turnText = "Click for O";
+    }
+  }
+
+}
+
+//method to update what is drawn on the screen each frame
+public void updateScreen(){
+
+  //update the background
+  background(bg);
+  
+  //update each grid location
+  for(int r = 0; r<grid.getSize(); r++){
+    for(int c= 0; c<grid.getSize(); c++){
+      GridLocation loc = new GridLocation(r,c);
+      
+      //Paint X's and O's in the approprate grid locations
+      if(grid.getSquare(loc).getMark().equals("X") ){
+        image(x_letter,grid.getX(loc) - x_letter.width/2,grid.getY(loc) - x_letter.height/2);  
+      } else if (grid.getSquare(loc).getMark().equals("O")){
+        image(o_letter,grid.getX(loc) - o_letter.width/2,grid.getY(loc) - o_letter.height/2);
+      }
+      
+    }
   }
 }
 
@@ -166,12 +176,21 @@ public boolean isThreeInARow(){
   return false;
 }
 
-//method to do things once game is over
+//method to indicate when the main game is over
+public boolean isGameOver(){
+  return isThreeInARow();
+}
+
+//method to describe what happens after the game is over
 public void endGame(){
     System.out.println("THREE IN A ROW! ");
     surface.setTitle("Three in a Row!  " + winner + " wins! Game over! ");
-    
-   // noLoop();
+
+    //Show an animation of 5 running horses
+    for(Sprite horse: horses){
+      horse.show();
+      horse.animate();
+    }
 }
 public class Grid{
   
