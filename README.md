@@ -37,8 +37,15 @@ practical intent, personal expression, or to address a societal issue.
 
 ### Lessons
 Total lenght: X Weeks
-
-(list each lesson with main topic(s))
+1. Introduction to the Project [2 days]
+2. Setup Environment [1 Day]
+3. Planning Theme [1 day]
+4. Intro to Processing [1 day]
+5. Creating the Background [1 day]
+6. Create MODEL classes [3 days]
+7. Animation [1 day]
+8. Beta Testing other team's games [1 day]
+9. Virtual Gallery Walk [1 day]
 
 ---
 
