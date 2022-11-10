@@ -52,6 +52,6 @@ Total lenght: ~ 3 Weeks
 ---
 
 ### Assesments
-- Unit Project
+- Unit Project: Students will develope a 2D Platformer Game, a 2D Tile-Based Game or an Educational App Game using the Processing IDE. 
 
 ---
