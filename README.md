@@ -6,7 +6,7 @@ by Jenna Lin, Jihae Park, Joel Bianchi
 ### General Overview
 Course: AP Computer Science A
 
-In this post AP Exam unit, students will learn how to develope a 2D Platformer Game, a 2D Tile-Based Game or an Educational App Game using the Processing IDE. 
+In this post AP Exam unit, students will learn how to develope a 2D Platformer Game, a 2D Tile-Based Game or an Educational App Game using the Processing IDE. Students will be guided through the development of a 2D Tile-Based Game, TicTacToe, using Processing. The main objectives of this unit is to promote collaboration between students and prepare students to work in teams; and to help students develop creativity and individuality in problem solving and performing tasks.
 
 ---
 
@@ -28,6 +28,7 @@ practical intent, personal expression, or to address a societal issue.
 ### Tools Used
 - Processing.org
 - Visual Studio Code
+- Github
 ---
 
 ### Resources
@@ -36,7 +37,7 @@ practical intent, personal expression, or to address a societal issue.
 ---
 
 ### Lessons
-Total lenght: X Weeks
+Total lenght: ~ 3 Weeks
 1. Introduction to the Project [2 days]
 2. Setup Environment [1 Day]
 3. Planning Theme [1 day]
@@ -50,6 +51,6 @@ Total lenght: X Weeks
 ---
 
 ### Assesments
-(list summative and/or formative assessments used)
+- Unit Project
 
 ---
