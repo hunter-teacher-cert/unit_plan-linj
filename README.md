@@ -6,12 +6,12 @@ by Jenna Lin, Jihae Park, Joel Bianchi
 ### General Overview
 Course: AP Computer Science A
 
-In this post AP Exam unit, students will learn how to develope a 2D Platformer Game, a 2D Tile-Based Game or an Educational App Game using the Processing IDE. GUIs are one of the most important parts of any web application. Unlike a text-based interface where users have to type commands into a command line box to tell the computer what to do, a GUI makes it easier for them to input commands by creating visual cues that are more relatable and standardized across all devices.
+In this post AP Exam unit, students will learn how to develope a 2D Platformer Game, a 2D Tile-Based Game or an Educational App Game using the Processing IDE. 
 
 ---
 
 ### Motivation for Unit
-We would like to plan something fun and engaging after the AP Exam. It would be a nice challenge for the students because it requires mastery of basic Java programming. We want to expose our students to professional Java tools including a Java game framework(Litiengine) and collaborative coding environment with version controls (via Github). 
+We would like to plan something fun and engaging after the AP Exam. Gauging from our previous teaching experiences, student engagement is often high when games are involved in the classroom. Moreover, game design is a useeful context for developing computational thinking and digital creativity. This would provide students with an authentic context for learning. Students cam make their own chocies, find solutions to problems, and lead the design process. We also want to expose our students to a different programming language, Processing and collaborative coding environment with version controls (via Github). 
 
 ---
 
