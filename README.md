@@ -1,4 +1,4 @@
-# An Introduction to Java GUIs
+# Game Design Through Processing 
 by Jenna Lin, Jihae Park, Joel Bianchi
 
 -----
