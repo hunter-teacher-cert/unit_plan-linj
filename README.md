@@ -19,6 +19,7 @@ We would like to plan something fun and engaging after the AP Exam. Gauging from
 9-12.CT.4 (Abstraction and Decomposition)
 Implement a program using a combination of student-defined and third-party functions to organize the
 computation
+
 9-12.CT.8 (Algorithms and Programming)
 Develop a program that effectively uses control structures in order to create a computer program for
 practical intent, personal expression, or to address a societal issue.
