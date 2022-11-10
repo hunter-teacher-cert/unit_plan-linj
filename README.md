@@ -52,6 +52,8 @@ Total lenght: ~ 3 Weeks
 ---
 
 ### Assesments
+- Beta Testing: Students will test play other students' game projects and provide insightful comments.
 - Unit Project: Students will develope a 2D Platformer Game, a 2D Tile-Based Game or an Educational App Game using the Processing IDE. 
+- Gallery Walk: Students will present the game they developed. 
 
 ---
