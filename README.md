@@ -27,13 +27,13 @@ practical intent, personal expression, or to address a societal issue.
 ---
 
 ### Tools Used
-- Processing.org
-- Visual Studio Code
-- Github
+- Processing.org - Java-based code to help with graphics
+- Visual Studio Code - IDE for developing
+- Github - for code sharing version control
 ---
 
 ### Resources
-(include any links/books/readings to be used during this unit)
+- [Project Reference Sheet](https://docs.google.com/spreadsheets/d/1Y9kB8RLlHF53ARt5owkiNc_5rfVpcaPbQoGhsvSDGDc/edit?usp=sharing)
 
 ---
 
@@ -46,17 +46,17 @@ Total lenght: ~ 3 Weeks
 5. Creating the Background [1 day]
 6. Create MODEL classes [3 days]
 7. Animation [1 day]
-8. Beta Testing other team's games [1 day]
-9. Virtual Gallery Walk [1 day]
+8. Project Construction [3 days]
+9. Beta Testing other team's games [1 day]
+10. Final Revisions [3 days]
+11. Virtual Gallery Walk [1 day]
 
 ---
 
 ### Assesments
+- Formative Assessments for each Milestone
 - Beta Testing: Students will test play other students' game projects and provide insightful comments.
 - Unit Project: Students will develope a 2D Platformer Game, a 2D Tile-Based Game or an Educational App Game using the Processing IDE. 
 - Gallery Walk: Students will present and debrief their games. 
 
 ---
-
-
-//test
