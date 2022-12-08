@@ -1,6 +1,8 @@
 # Game Design Through Processing 
 by Jenna Lin, Jihae Park, Joel Bianchi
 
+![](processing_logo.svg)
+
 -----
 
 ### General Overview
