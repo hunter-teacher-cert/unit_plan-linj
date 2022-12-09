@@ -48,7 +48,7 @@ void mouseClicked(){
   System.out.println("Mouse was clicked at (" + mouseX + "," + mouseY + ")");
 
   //what to do if clicked?
-  player1.
+  player1.draw();
   
 
 

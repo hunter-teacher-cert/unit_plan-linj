@@ -62,9 +62,10 @@ AnimatedSprite exampleSprite;
  public void mouseClicked(){
   
   //check if click was successful
-  System.out.println("Mouse was clicked at " + mouseX + "," + mouseY + ")");
+  System.out.println("Mouse was clicked at (" + mouseX + "," + mouseY + ")");
 
   //what to do if clicked?
+  player1.draw();
   
 
 
@@ -97,7 +98,7 @@ public void updateScreen(){
   background(bg);
   
   //update other screen elements
-
+  player1.draw();
 
 
 }
