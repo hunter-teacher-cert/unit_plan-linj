@@ -1,21 +1,28 @@
 //GAME VARIABLES
-Grid grid = new Grid(3);
+Grid grid = new Grid(6,8);
 PImage bg;
 PImage player1;
+PImage endScreen;
 String titleText = "NameOfYourGame";
 String extraText = "Who's Turn?";
 AnimatedSprite exampleSprite;
+boolean doAnimation;
 
 
 //Required Processing method that gets run once
 void setup() {
-  size(440,440);  //match screen size to bg image size
+
+  //Match the screen size to the background image size
+  size(800, 600);
+
+  //Set the 
   surface.setTitle(titleText);
 
   //Load images used
-  bg = loadImage("images/grid.jpg");
+  bg = loadImage("images/chess.jpg");
   player1 = loadImage("images/x_wood.png");
   player1.resize(100,100);
+  endScreen = loadImage("images/youwin.png");
   
   //Animation & Sprite setup
   exampleAnimationSetup();
@@ -34,10 +41,15 @@ void draw() {
   
   updateScreen();
 
+  populateSprites();
+  moveSprites();
+
+  checkExampleAnimation();
+  
   if(isGameOver()){
     endGame();
   }
-  
+
 }
 
 
@@ -46,14 +58,22 @@ void mouseClicked(){
   
   //check if click was successful
   System.out.println("Mouse was clicked at (" + mouseX + "," + mouseY + ")");
+  System.out.println("Grid location: " + grid.getGridLocation());
 
   //what to do if clicked?
-  player1.draw();
+  doAnimation = !doAnimation;
+  System.out.println("doAnimation: " + doAnimation);
+  grid.setMark("X",grid.getGridLocation());
   
-
-
 }
 
+//Known Processing method that automatically will run whenever a key is pressed
+void keyPressed(){
+
+  //check what key was pressed
+  System.out.println("Key pressed: " + key); //keyCode gives you an integer for the key
+
+}
 
 
 
@@ -81,15 +101,31 @@ public void updateScreen(){
   background(bg);
   
   //update other screen elements
-  player1.draw();
+  image(player1,100,100); //draws the player1 image at coordinates 100,100
 
 
 }
 
+//Method to populate enemies or other sprites on the screen
+public void populateEnemies(){
+
+}
+
+//Method to move around the enemies/sprites on the screen
+public void moveEnemies(){
+
+
+}
+
+//Method to handle the collisions between Sprites on the Screen
+public void handleCollisions(){
+
+
+}
 
 //method to indicate when the main game is over
 public boolean isGameOver(){
-  return false;
+  return false; //by default, the game is never over
 }
 
 //method to describe what happens after the game is over
@@ -99,18 +135,19 @@ public void endGame(){
     //Update the title bar
 
     //Show any end imagery
-    exampleAnimation();
+    image(endScreen, 100,100);
 
 }
 
 //example method that creates 5 horses along the screen
 public void exampleAnimationSetup(){  
   int i = 2;
-  exampleSprite = new AnimatedSprite(0, i*75, Math.random() + 0.1, "sprites/horse_run.png", "sprites/horse_run.json");
+  exampleSprite = new AnimatedSprite(50, i*75, "sprites/horse_run.png", "sprites/horse_run.json");
 }
 
 //example method that animates the horse Sprites
-public void exampleAnimation(){
-      exampleSprite.show();
-      exampleSprite.animate();
+public void checkExampleAnimation(){
+  if(doAnimation){
+    exampleSprite.animateHorizontal(1.0, 0.1, true);
+  }
 }

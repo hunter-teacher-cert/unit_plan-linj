@@ -37,8 +37,8 @@ public class Sprite {
 
   // method to move Sprite image on the screen relative to current position
   public void move(int x_change, int y_change){
-    this.x += x;
-    this.y += y;
+    this.x += x_change;
+    this.y += y_change;
   }
 
 

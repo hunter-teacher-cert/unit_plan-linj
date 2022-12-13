@@ -15,8 +15,8 @@ public class AnimatedSprite extends Sprite{
   
     private ArrayList<PImage> animation;
     private int w;
+    private int h;
     private int len;
-    private double speed;
     private int index;
 
     JSONObject spriteData;
@@ -25,7 +25,7 @@ public class AnimatedSprite extends Sprite{
 
   // Constructor for AnimatedSprite with Spritesheet (Must use the TexturePacker to make the JSON)
   // https://www.codeandweb.com/texturepacker
-  public AnimatedSprite(int x, int y, double speed, String png, String json) {
+  public AnimatedSprite(int x, int y, String png, String json) {
     super(x,y,"none", true);
 
     this.animation = new ArrayList<PImage>();
@@ -45,39 +45,79 @@ public class AnimatedSprite extends Sprite{
       int sY = fr.getInt("y");
       int sW = fr.getInt("w");
       int sH = fr.getInt("h");
-      //System.out.println(i + ":\t sX:" + sX + ":\t sY:" + sY + ":\t sW:" + sW + ":\t sH:" + sH);
+      System.out.println(i + ":\t sX:" + sX + ":\t sY:" + sY + ":\t sW:" + sW + ":\t sH:" + sH);
       PImage img = spriteSheet.get(sX, sY, sW, sH);
       animation.add(img);
 
       this.w = this.animation.get(0).width;
+      this.h = this.animation.get(0).height;
       this.len = this.animation.size();
-      this.speed = speed;
       this.index = 0;
     }
   }
 
 
-  //Overriden method: Displays the corect frame of the Sprite image on the screen
+  //Overriden method: Displays the correct frame of the Sprite image on the screen
   public void show() {
     int index = (int) Math.floor(Math.abs(this.index)) % this.len;
-    image(animation.get(Math.abs(this.index) % this.animation.size()), super.getX(), super.getY());
+    image(animation.get(index), super.getX(), super.getY());
+    //System.out.println("Pos: "+ super.getX() +"," + super.getY());
+  } 
+
+  //Method to cycle through the images of the animated sprite
+  public void animate(float animationSpeed){
+    index += (int) (animationSpeed * 10);
+    show();
   }
 
-  //animated method that makes the Sprite move to the right
-  public void animate() {
+  //animated method that makes the Sprite move to the right-left
+  public void animateHorizontal(float horizontalSpeed, float animationSpeed, boolean wraparound) {
 
     //adjust speed & frames
-    this.index += this.speed * 10;
-    super.move( (int) (this.speed * 15), 0 );
+    animate(animationSpeed);
+    super.move( (int) (horizontalSpeed * 10), 0 );
   
     //wraparound sprite if goes off the right or left
+    if(wraparound){
+      wraparoundHorizontal();
+    }
+
+  }
+
+  //animated method that makes the Sprite move down-up
+  public void animateVertical(float verticalSpeed, float animationSpeed, boolean wraparound) {
+
+    //adjust speed & frames
+    animate(animationSpeed);
+    super.move( 0, (int) (verticalSpeed * 10));
+  
+    //wraparound sprite if goes off the bottom or top
+    if(wraparound){
+      wraparoundVertical();
+    }
+
+  }
+
+
+  //wraparound sprite if goes off the right-left
+  private void wraparoundHorizontal(){
     if ( super.getX() > width ) {
       super.setX( -this.w );
     } else if ( super.getX() < -width ){
       super.setX( width );
     }
+  }
+
+  //wraparound sprite if goes off the top-bottom
+  private void wraparoundVertical(){
+    if ( super.getY() > height ) {
+      super.setY( -this.h );
+    } else if ( super.getY() < -height ){
+      super.setY( height );
+    }
 
   }
-  
+
+
 
 }
