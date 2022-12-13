@@ -2,18 +2,18 @@ public class Grid{
   
   private int rows;
   private int cols;
-  private Square[][] board;
+  private GridTile[][] board;
   
 
   //Grid constructor that will create a Grid with the specified number of rows and cols
   public Grid(int rows, int cols){
     this.rows = rows;
     this.cols = cols;
-    board = new Square[rows][cols];
+    board = new GridTile[rows][cols];
     
     for(int r=0; r<rows; r++){
       for(int c=0; c<cols; c++){
-         board[r][c] = new Square();
+         board[r][c] = new GridTile();
       }
     }
   }
@@ -66,10 +66,10 @@ public class Grid{
   //Accessor method that provide the x-pixel value given a GridLocation loc
   public int getX(GridLocation loc){
     
-    int widthOfOneSquare = pixelWidth/this.cols;
+    int widthOfOneTile = pixelWidth/this.cols;
  
     //calculate the center of the grid GridLocation
-    int pixelX = (widthOfOneSquare/2) + (widthOfOneSquare * loc.getC()); 
+    int pixelX = (widthOfOneTile/2) + (widthOfOneTile * loc.getC()); 
     
     return pixelX;
   } 
@@ -77,10 +77,10 @@ public class Grid{
   //Accessor method that provide the y-pixel value given a GridLocation loc
   public int getY(GridLocation loc){
     
-    int heightOfOneSquare = pixelHeight/this.rows;
+    int heightOfOneTile = pixelHeight/this.rows;
  
     //calculate the center of the grid GridLocation
-    int pixelY = (heightOfOneSquare/2) + (heightOfOneSquare * loc.getR()); 
+    int pixelY = (heightOfOneTile/2) + (heightOfOneTile * loc.getR()); 
     
     return pixelY;
   } 
@@ -95,13 +95,13 @@ public class Grid{
     return cols;
   }
 
-  //Returns the Square object stored at a specified GridLocation
-  public Square getSquare(GridLocation loc){
+  //Returns the GridTile object stored at a specified GridLocation
+  public GridTile getTile(GridLocation loc){
     return board[loc.getR()][loc.getC()];
   }
 
-  //Returns the Square object stored at a specified row and column
-  public Square getSquare(int r, int c){
+  //Returns the GridTile object stored at a specified row and column
+  public GridTile getTile(int r, int c){
     return board[r][c];
   }
   

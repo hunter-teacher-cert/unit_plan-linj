@@ -1,21 +1,21 @@
-public class Square{
+public class GridTile{
   
   private PImage pi;
   private String mark;
   final private static String noMark = " ";
 
-  //Default Square constructor which puts an empty String mark in the Square
-  public Square(){
+  //Default GridTile constructor which puts an empty String mark in the GridTile
+  public GridTile(){
     this(noMark);
   }
 
-  //Square constructor which adds the specified String mark
-  public Square(String mark){
+  //GridTile constructor which adds the specified String mark
+  public GridTile(String mark){
     this.mark = mark;
 
   }
   
-  // Accessor method that gets the mark in the Square
+  // Accessor method that gets the mark in the GridTile
   public String getMark(){
     return mark;
   }
@@ -25,7 +25,7 @@ public class Square{
     this.mark = mark;
   }
 
-  // Mutator method sets a new mark in the Square 
+  // Mutator method sets a new mark in the GridTile 
   // if it does not already have a mark, 
   // returns true or false if successful
   public boolean setNewMark(String mark){
@@ -34,17 +34,17 @@ public class Square{
       System.out.println("Successfully changed mark");
       return true;
     } else {
-      System.out.println("That square is already taken!");
+      System.out.println("That GridTile is already taken!");
       return false;
     }
   }
   
-  // Mutator method that sets an new PImage in the Square
+  // Mutator method that sets an new PImage in the GridTile
   public void setImage(PImage pi){
     this.pi = pi;
   }
 
-  //Accessor method that returns the PImage stored in the Square
+  //Accessor method that returns the PImage stored in the GridTile
   public PImage getImage(){
     return pi;
   }
