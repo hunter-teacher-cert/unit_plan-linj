@@ -15,7 +15,7 @@ void setup() {
   //Match the screen size to the background image size
   size(800, 600);
 
-  //Set the 
+  //Set the title on the title bar
   surface.setTitle(titleText);
 
   //Load images used
@@ -73,6 +73,10 @@ void keyPressed(){
   //check what key was pressed
   System.out.println("Key pressed: " + key); //keyCode gives you an integer for the key
 
+  //What to do when a key is pressed
+
+  
+
 }
 
 
@@ -107,12 +111,12 @@ public void updateScreen(){
 }
 
 //Method to populate enemies or other sprites on the screen
-public void populateEnemies(){
+public void populateSprites(){
 
 }
 
 //Method to move around the enemies/sprites on the screen
-public void moveEnemies(){
+public void moveSprites(){
 
 
 }

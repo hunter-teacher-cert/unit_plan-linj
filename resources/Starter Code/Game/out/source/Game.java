@@ -32,8 +32,8 @@ boolean doAnimation;
   //Match the screen size to the background image size
   /* size commented out by preprocessor */;
 
-  //Set the 
-  setTitle(titleText);
+  //Set the title on the title bar
+  surface.setTitle(titleText);
 
   //Load images used
   bg = loadImage("images/chess.jpg");
@@ -88,7 +88,7 @@ boolean doAnimation;
  public void keyPressed(){
 
   //check what key was pressed
-  System.out.println("Key pressed: " + key); //keyCode gives you an integer for the key
+  System.out.println("Key pressed: " + keyCode); //keyCode gives you an integer for the key
 
 }
 
@@ -124,12 +124,12 @@ public void updateScreen(){
 }
 
 //Method to populate enemies or other sprites on the screen
-public void populateEnemies(){
+public void populateSprites(){
 
 }
 
 //Method to move around the enemies/sprites on the screen
-public void moveEnemies(){
+public void moveSprites(){
 
 
 }
@@ -295,18 +295,18 @@ public class Grid{
   
   private int rows;
   private int cols;
-  private Square[][] board;
+  private GridTile[][] board;
   
 
   //Grid constructor that will create a Grid with the specified number of rows and cols
   public Grid(int rows, int cols){
     this.rows = rows;
     this.cols = cols;
-    board = new Square[rows][cols];
+    board = new GridTile[rows][cols];
     
     for(int r=0; r<rows; r++){
       for(int c=0; c<cols; c++){
-         board[r][c] = new Square();
+         board[r][c] = new GridTile();
       }
     }
   }
@@ -359,10 +359,10 @@ public class Grid{
   //Accessor method that provide the x-pixel value given a GridLocation loc
   public int getX(GridLocation loc){
     
-    int widthOfOneSquare = pixelWidth/this.cols;
+    int widthOfOneTile = pixelWidth/this.cols;
  
     //calculate the center of the grid GridLocation
-    int pixelX = (widthOfOneSquare/2) + (widthOfOneSquare * loc.getC()); 
+    int pixelX = (widthOfOneTile/2) + (widthOfOneTile * loc.getC()); 
     
     return pixelX;
   } 
@@ -370,10 +370,10 @@ public class Grid{
   //Accessor method that provide the y-pixel value given a GridLocation loc
   public int getY(GridLocation loc){
     
-    int heightOfOneSquare = pixelHeight/this.rows;
+    int heightOfOneTile = pixelHeight/this.rows;
  
     //calculate the center of the grid GridLocation
-    int pixelY = (heightOfOneSquare/2) + (heightOfOneSquare * loc.getR()); 
+    int pixelY = (heightOfOneTile/2) + (heightOfOneTile * loc.getR()); 
     
     return pixelY;
   } 
@@ -388,13 +388,13 @@ public class Grid{
     return cols;
   }
 
-  //Returns the Square object stored at a specified GridLocation
-  public Square getSquare(GridLocation loc){
+  //Returns the GridTile object stored at a specified GridLocation
+  public GridTile getTile(GridLocation loc){
     return board[loc.getR()][loc.getC()];
   }
 
-  //Returns the Square object stored at a specified row and column
-  public Square getSquare(int r, int c){
+  //Returns the GridTile object stored at a specified row and column
+  public GridTile getTile(int r, int c){
     return board[r][c];
   }
   
@@ -421,6 +421,63 @@ public class GridLocation{
     return row + "," + col;
   }
   
+}
+public class GridTile{
+  
+  private PImage pi;
+  private String mark;
+  final private static String noMark = " ";
+
+  //Default GridTile constructor which puts an empty String mark in the GridTile
+  public GridTile(){
+    this(noMark);
+  }
+
+  //GridTile constructor which adds the specified String mark
+  public GridTile(String mark){
+    this.mark = mark;
+
+  }
+  
+  // Accessor method that gets the mark in the GridTile
+  public String getMark(){
+    return mark;
+  }
+  
+  // Mutator method that automatically changes the mark
+  public void setMark(String mark){
+    this.mark = mark;
+  }
+
+  // Mutator method sets a new mark in the GridTile 
+  // if it does not already have a mark, 
+  // returns true or false if successful
+  public boolean setNewMark(String mark){
+    if(this.mark.equals(noMark)){
+      this.mark = mark;
+      System.out.println("Successfully changed mark");
+      return true;
+    } else {
+      System.out.println("That GridTile is already taken!");
+      return false;
+    }
+  }
+  
+  // Mutator method that sets an new PImage in the GridTile
+  public void setImage(PImage pi){
+    this.pi = pi;
+  }
+
+  //Accessor method that returns the PImage stored in the GridTile
+  public PImage getImage(){
+    return pi;
+  }
+  
+  public String toString(){
+    return mark;
+  }
+
+
 }
 // Inspired by Daniel Shiffman's p5js Animated Sprite tutorial
 
@@ -502,63 +559,6 @@ public class Sprite {
   }
 
   
-
-}
-public class Square{
-  
-  private PImage pi;
-  private String mark;
-  final private static String noMark = " ";
-
-  //Default Square constructor which puts an empty String mark in the Square
-  public Square(){
-    this(noMark);
-  }
-
-  //Square constructor which adds the specified String mark
-  public Square(String mark){
-    this.mark = mark;
-
-  }
-  
-  // Accessor method that gets the mark in the Square
-  public String getMark(){
-    return mark;
-  }
-  
-  // Mutator method that automatically changes the mark
-  public void setMark(String mark){
-    this.mark = mark;
-  }
-
-  // Mutator method sets a new mark in the Square 
-  // if it does not already have a mark, 
-  // returns true or false if successful
-  public boolean setNewMark(String mark){
-    if(this.mark.equals(noMark)){
-      this.mark = mark;
-      System.out.println("Successfully changed mark");
-      return true;
-    } else {
-      System.out.println("That square is already taken!");
-      return false;
-    }
-  }
-  
-  // Mutator method that sets an new PImage in the Square
-  public void setImage(PImage pi){
-    this.pi = pi;
-  }
-
-  //Accessor method that returns the PImage stored in the Square
-  public PImage getImage(){
-    return pi;
-  }
-  
-  public String toString(){
-    return mark;
-  }
-
 
 }
 
