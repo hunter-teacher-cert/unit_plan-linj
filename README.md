@@ -46,7 +46,7 @@ Total lenght: ~ 3 Weeks
 3. Planning Theme [1 day]
 4. Intro to Processing [1 day]
 5. Creating the Background [1 day]
-6. Gathering User Input [2 day]
+6. Handling User Input [2 day]
 7. Animation [2 day]
 8. Project Construction [3 days]
 9. Beta Testing other team's games [1 day]
